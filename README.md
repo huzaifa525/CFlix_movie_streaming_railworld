@@ -1,7 +1,10 @@
 # Netflix Clone
 
-## Team Members
+## Manager
+- Vaibhav Kharat
+## Team Leader
 - Huzefa Nalkheda wala
+## Team Members
 - Gunjan Dixit
 - Daksh Thakor
 - Manish
