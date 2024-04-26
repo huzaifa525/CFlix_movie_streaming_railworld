@@ -6,9 +6,9 @@
 - Huzefa Nalkheda wala
 ## Team Members
 - Gunjan Dixit
-- Daksh Thakor
-- Manish
-- Uttam
+- Daksh Thakur
+- Manish Chandrakar
+- Uttam T. Panwar
 - Govind Gupta
 
 ## Project Description
