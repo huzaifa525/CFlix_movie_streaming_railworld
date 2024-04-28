@@ -74,14 +74,6 @@ nav {
   padding: 5px 10px;
 }
 
-.search-box input {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  outline: none;
-  width: 200px;
-}
-
 .search-box button {
   background-color: transparent;
   border: none;
@@ -291,14 +283,12 @@ footer {
   }
 
   .search-box {
-    order: 3;
+    order: 2;
     margin-top: 10px;
-    width: 100%;
+    
   }
 
-  .search-box input {
-    width: calc(100% - 40px);
-  }
+
 
   .user-profile {
     order: 2;
