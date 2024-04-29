@@ -14,6 +14,7 @@
 - **Manish Chandrakar**
 - **Uttam T. Panwar**
 - **Govind Gupta**
+- **Deepak Kumar**
 
 ## Project Description
 
