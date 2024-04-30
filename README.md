@@ -32,7 +32,7 @@ Welcome to our Netflix Clone project! This is a frontend clone of Netflix, devel
 
 To run this project locally, follow these steps:
 
-1. Clone the repository: `git clone [Netflix Clone Repository](https://github.com/huzaifa525/netflix_clone_railworld.git)
+1. Clone the repository: `git clone (https://github.com/huzaifa525/netflix_clone_railworld.git)
 `
 2. Navigate to the project directory: `cd netflix-clone`
 3. Open the `index.html` file in your preferred web browser.
