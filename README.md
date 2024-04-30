@@ -34,5 +34,5 @@ To run this project locally, follow these steps:
 
 1. Clone the repository: `git clone (https://github.com/huzaifa525/netflix_clone_railworld.git)
 `
-2. Navigate to the project directory: `cd netflix-clone`
+2. Navigate to the project directory: `netflix_clone_railworld`
 3. Open the `index.html` file in your preferred web browser.
