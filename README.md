@@ -25,4 +25,13 @@ Welcome to our Netflix Clone project! This is a frontend clone of Netflix, devel
 - **User Authentication:** Allow users to sign up and log in securely.
 - **Browse Content:** Users can browse through a wide range of movies and TV shows.
 - **Search Functionality:** Implement a search feature to help users find specific titles.
+- **Video Playback:** Enable users to watch trailers or preview content directly on the platform.
 - **Responsive Design:** Ensure the website is accessible and user-friendly across various devices.
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository: `git clone (https://github.com/huzaifa525/netflix_clone_railworld.git)`
+2. Navigate to the project directory: `cd netflix-clone`
+3. Open the `index.html` file in your preferred web browser.
