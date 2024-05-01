@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C-Flix</title>
+    <link rel="stylesheet" href="./src/css/styles.css"> <!-- Assuming you have some styles -->
+    <link rel="stylesheet" href="./src/css/preloader.css"> <!-- Assuming you have some styles -->
+    <link rel="icon" href="netflix-images/icon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="preloader">
+        <video autoplay loop muted>
+            <source src="your-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+        <!-- Your page content goes here -->
+   
+    <div class="nav" id="nav">
+        <a href="index.html">
+            <img src="netflix-images/prime-logo.png" alt="" class="nav_logo"></a>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="banner_button" placeholder="Search anything...">
+                <button class="banner_button" onclick="searchMovies()">Search</button>
+            </div>
+        <a href="#">
+            
+            <div class="user-profile">
+                <img src="netflix-images/netflix-avatar.png" alt="" class="nav_avatar"></a>
+                <div class="profile-options">
+                  <ul>
+                    <li><i class="fas fa-exchange-alt"></i><a href="./transfer.html"> Transfer Profiles</a></li>
+                    <li><i class="fas  fa-user"></i><a href="./account.html"> Account </a></li>
+                    <hr>
+                    <li class="sign-out">
+                        <a href="./landing.html"> Sign Out</a></li>
+                  </ul>
+                </div>
+              </div>
+            
+    </div>
+
+    <!-- header -->
+    <div class="banner">
+        <div class="banner_contents">
+            <h1 class="banner_title">Jigarthanda Double X</h1>
+            
+            <div class="banner_description">
+                Dive into the enthralling world of Tamil cinema with our hits of 2023! Explore gripping social commentaries, heart-wrenching romances, and laugh-out-loud comedies.
+            </div>
+        </div>
+        <div class="banner_fade"></div>
+    </div>
+
+    <div class="row">
+        <div class="row_posters" id="searchResults"></div>
+    </div>
+
+    <!-- Netflix Originals -->
+    <div class="row">
+        <h1>Stream Originals</h1>
+        <div class="row_posters" id="netflixOriginalsPosters"></div>
+    </div>
+
+    <!-- All time fav -->
+    <div class="row">
+        <h1>Gems for You</h1>
+        <div class="row_posters" id="allTimeFavPosters"></div>
+    </div>
+    <!-- New Arrivals -->
+    <div class="row">
+        <h1>New Arrivals</h1>
+        <div class="row_posters" id="newArrivals"></div>
+    </div>
+
+    <!-- Popular -->
+    <div class="row">
+        <h1>Popular </h1>
+        <div class="row_posters" id="Popular"></div>
+    </div>
+
+    <!-- English Drama -->
+    <div class="row">
+        <h1>English Drama</h1>
+        <div class="row_posters" id="EngDrama"></div>
+    </div>
+</div>
+<script src="./src/js/preloader.js"></script>
+<script src="./src/js/index.js"></script>
+
+</body>
+
+</html>
