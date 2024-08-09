@@ -2,20 +2,12 @@
 
 ## Project Overview
 
-### Manager
-- **Vaibhav Kharat**
-
 ### Team Leader
 - **Huzefa Nalkheda wala**
 
 ### Team Members
-- **Gunjan Dixit**
 - **Daksh Thakur**
-- **Manish Chandrakar**
-- **Uttam T. Panwar**
-- **Govind Gupta**
-- **Deepak Kumar**
-
+- 
 ## Project Description
 
 Welcome to CFlix, a dynamic movie streaming website developed as part of the Railworld India Demo Project. CFlix is a frontend platform built using HTML, CSS, and JavaScript, aiming to provide users with an immersive movie-watching experience reminiscent of popular streaming services. Our team's focus was to create an intuitive interface with seamless navigation, ensuring users can easily discover and enjoy their favorite movies.
