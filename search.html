@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - CFlix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="icon" href="netflix-images/prime-logo.png" type="image/png">
+</head>
+
+<body>
+    <nav class="nav" id="nav"></nav>
+
+    <main class="page">
+        <form class="search-box" id="searchForm" role="search">
+            <i class="fas fa-search"></i>
+            <input type="search" id="searchInput" placeholder="Search movies, series or actors" aria-label="Search movies, series or actors" autocomplete="off" autofocus>
+            <button type="button" id="searchClear" aria-label="Clear search" hidden><i class="fas fa-times"></i></button>
+        </form>
+
+        <div class="toggle" id="searchTabs" role="group" aria-label="Filter results" hidden>
+            <button type="button" data-filter="all">All <span></span></button>
+            <button type="button" data-filter="movie">Movies <span></span></button>
+            <button type="button" data-filter="tv">Series <span></span></button>
+        </div>
+        <div class="search-person" id="searchPerson"></div>
+        <p class="page__status" id="searchStatus" role="status"></p>
+        <div class="grid" id="searchGrid"></div>
+
+        <div id="searchIdle">
+            <section id="recentSearches" hidden>
+                <h2 class="page__heading">Recent Searches</h2>
+                <div class="chips" id="recentList"></div>
+            </section>
+            <section>
+                <h2 class="page__heading">Trending Today</h2>
+                <div class="grid" id="trendingGrid"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="./src/js/common.js"></script>
+    <script src="./src/js/search.js"></script>
+</body>
+
+</html>

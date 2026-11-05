@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFlix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="icon" href="netflix-images/prime-logo.png" type="image/png">
+</head>
+
+<body>
+    <nav class="nav" id="nav"></nav>
+
+    <header class="detail" id="detail">
+        <div class="detail__content">
+            <h1 id="movieTitle"></h1>
+            <div class="detail__meta" id="movieMeta"></div>
+            <p class="detail__plot" id="moviePlot"></p>
+            <div class="actions">
+                <a class="button button--white" id="playButton" hidden></a>
+                <a class="button button--ghost" id="trailerButton" hidden><i class="fas fa-film"></i> Trailer</a>
+                <button class="button button--ghost" id="listButton" type="button" hidden></button>
+            </div>
+            <div class="detail__credits" id="movieCredits"></div>
+        </div>
+    </header>
+
+    <section class="episodes" id="episodes" hidden>
+        <div class="episodes__heading">
+            <h2>Episodes</h2>
+            <select id="seasonSelect" aria-label="Season"></select>
+        </div>
+        <div id="episodeList"></div>
+    </section>
+
+    <main id="titleRows"></main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="./src/js/common.js"></script>
+    <script src="./src/js/title.js"></script>
+</body>
+
+</html>

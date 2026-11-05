@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse - CFlix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="icon" href="netflix-images/prime-logo.png" type="image/png">
+</head>
+
+<body>
+    <nav class="nav" id="nav"></nav>
+
+    <main class="page">
+        <h1 class="page__title" id="browseTitle"></h1>
+        <div class="filters" id="browseFilters">
+            <div class="toggle" role="group" aria-label="Content type">
+                <button type="button" data-type="movie">Movies</button>
+                <button type="button" data-type="tv">Series</button>
+            </div>
+            <select id="languageFilter" aria-label="Language">
+                <option value="all">All Languages</option>
+            </select>
+            <select id="sortFilter" aria-label="Sort by">
+                <option value="popular">Most Popular</option>
+                <option value="new">Newest</option>
+                <option value="top">Top Rated</option>
+            </select>
+        </div>
+        <div class="chips" id="moodChips"></div>
+        <div class="chips" id="genreChips"></div>
+        <div class="grid" id="browseGrid"></div>
+        <p class="page__status" id="browseStatus" role="status"></p>
+        <div id="loadMore"></div>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="./src/js/common.js"></script>
+    <script src="./src/js/browse.js"></script>
+</body>
+
+</html>

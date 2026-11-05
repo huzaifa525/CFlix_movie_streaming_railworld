@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cast - CFlix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="icon" href="netflix-images/prime-logo.png" type="image/png">
+</head>
+
+<body>
+    <nav class="nav" id="nav"></nav>
+
+    <main class="page">
+        <header class="person">
+            <div class="person__photo" id="personPhoto"></div>
+            <div class="person__about">
+                <h1 class="page__title" id="personName"></h1>
+                <p class="person__details" id="personDetails"></p>
+                <p class="person__bio" id="personBio"></p>
+                <button class="person__more" id="personMore" type="button" hidden>Read more</button>
+            </div>
+        </header>
+
+        <div class="toggle person__tabs" id="personTabs" role="group" aria-label="Filter titles" hidden>
+            <button type="button" data-filter="all">All <span></span></button>
+            <button type="button" data-filter="movie">Movies <span></span></button>
+            <button type="button" data-filter="tv">Series <span></span></button>
+        </div>
+        <div class="grid" id="personGrid"></div>
+        <p class="page__status" id="personStatus" role="status"></p>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="./src/js/common.js"></script>
+    <script src="./src/js/person.js"></script>
+</body>
+
+</html>

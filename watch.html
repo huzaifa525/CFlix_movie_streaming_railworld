@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch - CFlix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="icon" href="netflix-images/prime-logo.png" type="image/png">
+</head>
+
+<body>
+    <nav class="nav" id="nav"></nav>
+
+    <main class="watch">
+        <a class="watch__back" id="watchBack" href="./index.html"><i class="fas fa-arrow-left"></i> Back to details</a>
+
+        <div class="watch__layout" id="watchLayout">
+            <div class="watch__main">
+                <div class="watch__stage">
+                    <iframe id="watchFrame" title="Video player" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="origin"></iframe>
+                    <div class="watch__loading" id="watchLoading" role="status" hidden>
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                        <span id="watchLoadingText"></span>
+                    </div>
+                </div>
+
+                <div class="watch__bar">
+                    <div>
+                        <h1 id="watchTitle"></h1>
+                        <p id="watchSubtitle"></p>
+                    </div>
+                    <div class="watch__steps">
+                        <button class="button button--ghost" id="theaterButton" type="button" aria-pressed="false" hidden></button>
+                        <button class="button button--ghost" id="previousEpisode" type="button" hidden><i class="fas fa-step-backward"></i> Previous</button>
+                        <button class="button button--white" id="nextEpisode" type="button" hidden>Next Episode <i class="fas fa-step-forward"></i></button>
+                    </div>
+                </div>
+
+                <div class="watch__servers" id="watchServers" hidden>
+                    <span>Server</span>
+                    <div class="toggle" id="serverList" role="group" aria-label="Video server"></div>
+                    <p>Not loading? Try another server. These servers show their own ads, and a free blocker such as <a href="https://ublockorigin.com/" target="_blank" rel="noopener">uBlock Origin</a> stops most of them.</p>
+                </div>
+            </div>
+
+            <aside class="watch__side" id="watchSide" hidden>
+                <section class="episodes episodes--watch" id="episodes" hidden>
+                    <div class="episodes__heading">
+                        <h2>Episodes</h2>
+                        <select id="seasonSelect" aria-label="Season"></select>
+                    </div>
+                    <div id="episodeList"></div>
+                </section>
+                <section class="episodes episodes--watch" id="moreLikeThis" hidden>
+                    <div class="episodes__heading">
+                        <h2>More Like This</h2>
+                    </div>
+                    <div id="moreLikeThisList"></div>
+                </section>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script src="./src/js/common.js"></script>
+    <script src="./src/js/watch.js"></script>
+</body>
+
+</html>

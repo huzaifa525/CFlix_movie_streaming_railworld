@@ -14,21 +14,22 @@ Welcome to CFlix, a dynamic movie streaming website. CFlix is a frontend platfor
 
 ## Features
 
-- **Extensive Movie Library:** Access a vast collection of movies spanning various genres.
-- **Trending Carousel:** The home page shows this week's top 10 movies from TMDB.
-- **Efficient Search:** Implement a robust search feature to quickly find desired titles.
-- **Preview Trailers:** Allow users to watch trailers and previews directly on the platform.
+- **Hindi First:** Hindi titles lead the home page, the rotating banner and the Movies and Series pages.
+- **Home:** Hover previews with trailers, mood rows, Trending Now, and new releases and series.
+- **Movies and Series:** Browse every title by mood, genre and language, sorted by popularity, date or rating.
+- **Search:** Instant results for movies, series and actors. Add a year to narrow the results, such as `Leo 2023`.
+- **Title Pages:** Details, trailers, cast, seasons and episodes, and recommendations.
+- **Cast Pages:** Biography and every film and series for an actor.
+- **Watch Page:** Plays inside the page with a server switcher and previous and next episode controls.
+- **My List and Continue Watching:** Saved in the browser, with no account needed.
 - **Responsive Design:** Ensure optimal viewing experience across all devices.
 
-## TMDB and OMDB APIs
+## TMDB API
 
-CFlix utilizes TMDB (The Movie Database) and OMDB (Open Movie Database) APIs to dynamically fetch movie details and enrich the user experience. TMDB provides comprehensive movie information such as titles, genres, ratings, and more, while OMDB supplements this with additional metadata and details about individual movies.
+CFlix uses the TMDB (The Movie Database) API for its catalog, trending lists, search, and movie and series details. TMDB also supplies the IMDb ID that the video player needs.
 
-### How to Use TMDB and OMDB APIs
-
-1. **Obtain API Keys:** Register for API keys from TMDB `(https://www.themoviedb.org/documentation/api)` and OMDB `(http://www.omdbapi.com/apikey.aspx)` websites.
-2. **Integrate API Keys:** Replace the API keys in `src/js/common.js` (TMDB) and `src/js/movie.js` (OMDB) with your own keys.
-3. **Fetch Movie Data:** CFlix dynamically fetches movie details from TMDB and OMDB APIs using AJAX requests. For instance, when a user explores the movie library, the JavaScript code sends requests to TMDB to fetch trending movies, displaying them on the interface. Similarly, when users search for specific movies, the search query is sent to TMDB, and the OMDB API supplies the details shown on the movie page.
+1. **Obtain an API token:** Register at `https://www.themoviedb.org/documentation/api`.
+2. **Integrate the token:** Replace the token in `src/js/common.js` with your own.
 
 ## Installation
 

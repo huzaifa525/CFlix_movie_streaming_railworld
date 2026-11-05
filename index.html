@@ -14,88 +14,26 @@
 </head>
 
 <body>
-    <nav class="nav" id="nav">
-        <a href="./index.html" class="logo">CFLIX</a>
-        <div class="nav__right">
-            <form class="search" id="searchForm" role="search">
-                <i class="fas fa-search"></i>
-                <input type="search" id="searchInput" placeholder="Titles" aria-label="Search movies">
-            </form>
-        </div>
-    </nav>
+    <nav class="nav" id="nav"></nav>
 
     <header class="banner" id="banner">
+        <div class="banner__slides" id="bannerSlides"></div>
         <div class="banner__content">
             <h1 id="bannerTitle"></h1>
+            <p class="banner__details" id="bannerDetails"></p>
             <p id="bannerDescription"></p>
-            <a class="button button--white" id="bannerPlay" hidden><i class="fas fa-play"></i> Play</a>
+            <div class="actions">
+                <a class="button button--white" id="bannerPlay" hidden><i class="fas fa-play"></i> Play</a>
+                <button class="button button--ghost" id="bannerList" type="button" hidden></button>
+                <button class="button button--ghost" id="surpriseButton" type="button" hidden><i class="fas fa-random"></i> Surprise Me</button>
+            </div>
         </div>
+        <div class="banner__dots" id="bannerDots"></div>
     </header>
 
-    <main class="rows">
-    <section class="row" id="searchResults" hidden>
-        <h2 class="row__title">Search Results</h2>
-        <p class="row__message" hidden>No matches found.</p>
-        <div class="row__viewport">
-            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
-            <div class="row__items"></div>
-            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-    <section class="row" id="trending">
-        <h2 class="row__title">Trending Now</h2>
-        <div class="row__viewport">
-            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
-            <div class="row__items"></div>
-            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-    <section class="row" data-list="8283900">
-        <h2 class="row__title">Stream Originals</h2>
-        <div class="row__viewport">
-            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
-            <div class="row__items"></div>
-            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-    <section class="row" data-list="8299189">
-        <h2 class="row__title">Gems for You</h2>
-        <div class="row__viewport">
-            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
-            <div class="row__items"></div>
-            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-    <section class="row" data-list="8299193">
-        <h2 class="row__title">New Arrivals</h2>
-        <div class="row__viewport">
-            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
-            <div class="row__items"></div>
-            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-    <section class="row" data-list="8283919">
-        <h2 class="row__title">Popular</h2>
-        <div class="row__viewport">
-            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
-            <div class="row__items"></div>
-            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-    <section class="row" data-list="8283921">
-        <h2 class="row__title">English Drama</h2>
-        <div class="row__viewport">
-            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
-            <div class="row__items"></div>
-            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-    </main>
+    <main class="rows" id="rows"></main>
 
-    <footer class="footer">
-        <span class="logo">CFLIX</span>
-        <p>Movie data and images from TMDB and OMDb.</p>
-    </footer>
+    <footer class="footer" id="footer"></footer>
 
     <script src="./src/js/common.js"></script>
     <script src="./src/js/index.js"></script>
