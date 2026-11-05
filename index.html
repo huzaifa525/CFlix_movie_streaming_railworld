@@ -1,101 +1,104 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C-Flix</title>
-    <link rel="stylesheet" href="./src/css/styles.css"> <!-- Assuming you have some styles -->
-    <link rel="stylesheet" href="./src/css/preloader.css"> <!-- Assuming you have some styles -->
-    <link rel="icon" href="netflix-images/icon.png" type="image/png">
+    <title>CFlix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="icon" href="netflix-images/prime-logo.png" type="image/png">
 </head>
 
 <body>
-    <div class="preloader">
-        <video autoplay loop muted>
-            <source src="your-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <!-- Content -->
-    <div class="content">
-        <!-- Your page content goes here -->
-   
-    <div class="nav" id="nav">
-        <a href="index.html">
-            <img src="netflix-images/prime-logo.png" alt="" class="nav_logo"></a>
-            <div class="search-container">
-                <input type="text" id="searchInput" class="banner_button" placeholder="Search anything...">
-                <button class="banner_button" onclick="searchMovies()">Search</button>
-            </div>
-        <a href="#">
-            
-            <div class="user-profile">
-                <img src="netflix-images/netflix-avatar.png" alt="" class="nav_avatar"></a>
-                <div class="profile-options">
-                  <ul>
-                    <li><i class="fas fa-exchange-alt"></i><a href="./transfer.html"> Transfer Profiles</a></li>
-                    <li><i class="fas  fa-user"></i><a href="./account.html"> Account </a></li>
-                    <hr>
-                    <li class="sign-out">
-                        <a href="./landing.html"> Sign Out</a></li>
-                  </ul>
-                </div>
-              </div>
-            
-    </div>
-
-    <!-- header -->
-    <div class="banner">
-        <div class="banner_contents">
-            <h1 class="banner_title">Jigarthanda Double X</h1>
-            
-            <div class="banner_description">
-                Dive into the enthralling world of Tamil cinema with our hits of 2023! Explore gripping social commentaries, heart-wrenching romances, and laugh-out-loud comedies.
-            </div>
+    <nav class="nav" id="nav">
+        <a href="./index.html" class="logo">CFLIX</a>
+        <div class="nav__right">
+            <form class="search" id="searchForm" role="search">
+                <i class="fas fa-search"></i>
+                <input type="search" id="searchInput" placeholder="Titles" aria-label="Search movies">
+            </form>
         </div>
-        <div class="banner_fade"></div>
-    </div>
+    </nav>
 
-    <div class="row">
-        <div class="row_posters" id="searchResults"></div>
-    </div>
+    <header class="banner" id="banner">
+        <div class="banner__content">
+            <h1 id="bannerTitle"></h1>
+            <p id="bannerDescription"></p>
+            <a class="button button--white" id="bannerPlay" hidden><i class="fas fa-play"></i> Play</a>
+        </div>
+    </header>
 
-    <!-- Netflix Originals -->
-    <div class="row">
-        <h1>Stream Originals</h1>
-        <div class="row_posters" id="netflixOriginalsPosters"></div>
-    </div>
+    <main class="rows">
+    <section class="row" id="searchResults" hidden>
+        <h2 class="row__title">Search Results</h2>
+        <p class="row__message" hidden>No matches found.</p>
+        <div class="row__viewport">
+            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
+            <div class="row__items"></div>
+            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <section class="row" id="trending">
+        <h2 class="row__title">Trending Now</h2>
+        <div class="row__viewport">
+            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
+            <div class="row__items"></div>
+            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <section class="row" data-list="8283900">
+        <h2 class="row__title">Stream Originals</h2>
+        <div class="row__viewport">
+            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
+            <div class="row__items"></div>
+            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <section class="row" data-list="8299189">
+        <h2 class="row__title">Gems for You</h2>
+        <div class="row__viewport">
+            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
+            <div class="row__items"></div>
+            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <section class="row" data-list="8299193">
+        <h2 class="row__title">New Arrivals</h2>
+        <div class="row__viewport">
+            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
+            <div class="row__items"></div>
+            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <section class="row" data-list="8283919">
+        <h2 class="row__title">Popular</h2>
+        <div class="row__viewport">
+            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
+            <div class="row__items"></div>
+            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <section class="row" data-list="8283921">
+        <h2 class="row__title">English Drama</h2>
+        <div class="row__viewport">
+            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
+            <div class="row__items"></div>
+            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    </main>
 
-    <!-- All time fav -->
-    <div class="row">
-        <h1>Gems for You</h1>
-        <div class="row_posters" id="allTimeFavPosters"></div>
-    </div>
-    <!-- New Arrivals -->
-    <div class="row">
-        <h1>New Arrivals</h1>
-        <div class="row_posters" id="newArrivals"></div>
-    </div>
+    <footer class="footer">
+        <span class="logo">CFLIX</span>
+        <p>Movie data and images from TMDB and OMDb.</p>
+    </footer>
 
-    <!-- Popular -->
-    <div class="row">
-        <h1>Popular </h1>
-        <div class="row_posters" id="Popular"></div>
-    </div>
-
-    <!-- English Drama -->
-    <div class="row">
-        <h1>English Drama</h1>
-        <div class="row_posters" id="EngDrama"></div>
-    </div>
-</div>
-<script src="./src/js/preloader.js"></script>
-<script src="./src/js/index.js"></script>
-
+    <script src="./src/js/common.js"></script>
+    <script src="./src/js/index.js"></script>
 </body>
 
 </html>

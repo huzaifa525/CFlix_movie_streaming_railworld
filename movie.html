@@ -4,83 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>CFlix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <link rel="icon" href="netflix-images/icon.png" type="image/png">
-    <title>Movie Details</title>
-    <link rel="stylesheet" href="./src/css/movstyle.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <link rel="icon" href="netflix-images/prime-logo.png" type="image/png">
 </head>
 
 <body>
-    
-    <div class="nav" id="nav">
-        <a href="index.html">
-            <img src="netflix-images/prime-logo.png" alt="" class="nav_logo"></a>
-            <div class="search-container">
-                <input type="text" id="searchInput" class="banner_button" placeholder="Type anything...">
-                <button class="banner_button" onclick="searchMovies()">Search</button>
-            </div>
-            <a href="#">
-            
-            <div class="user-profile">
-                <img src="netflix-images/netflix-avatar.png" alt="" class="nav_avatar"></a>
-                <div class="profile-options">
-                  <ul>
-                    <li><i class="fas fa-exchange-alt"></i><a href="./transfer.html"> Transfer Profiles</a></li>
-                    <li><i class="fas  fa-user"></i><a href="./account.html"> Account </a></li>
-                    <hr>
-                    <li class="sign-out">
-                        <a href="./landing.html"> Sign Out</a></li>
-                  </ul>
-                </div>
-              </div>
-     </div>
-       
-
-	 
-	
-    <div class="movie-details-container">
-        <div class="backdrop-image"></div>
-        <div class="content-container">
-            <div class="movie-poster">
-                <img src="netflix-images/icon2.png" alt="Movie Poster" id="moviePoster">
-            </div>
-            <div class="movie-info">
-                <h1 id="movieTitle"></h1>
-                <div class="details">
-                    <div id="movieDetails"></div>
-                    <div class="info-row">
-                        <div class="rating">
-                            <span id="rating"></span>
-                        </div>
-                        <div class="genre" id="genre"></div>
-                        <div class="runtime" id="runtime"></div>
-                        <div class="year" id="year"></div>
-                    </div>
-                </div>
-                <div class="synopsis" id="synopsis"></div>
-                <div class="actions">
-                   
-			    <button id="openPopupBtn" class="watch-btn">Watch Now</button>
-
-    <div id="videoPopup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <iframe id="video-frame" src="" frameborder="0" allowfullscreen></iframe>
+    <nav class="nav" id="nav">
+        <a href="./index.html" class="logo">CFLIX</a>
+        <div class="nav__right">
+            <form class="search" id="searchForm" role="search">
+                <i class="fas fa-search"></i>
+                <input type="search" id="searchInput" placeholder="Titles" aria-label="Search movies">
+            </form>
         </div>
-    </div>
-                </div>
-            </div>
+    </nav>
+
+    <header class="detail" id="detail">
+        <div class="detail__content">
+            <h1 id="movieTitle"></h1>
+            <div class="detail__meta" id="movieMeta"></div>
+            <p class="detail__plot" id="moviePlot"></p>
+            <button class="button button--white" id="playButton" type="button" hidden><i class="fas fa-play"></i> Play</button>
+            <div class="detail__credits" id="movieCredits"></div>
         </div>
-    </div>
-    <div class="row">
-        <div class="row_posters" id="searchResults"></div>
-    </div>
+    </header>
 
+    <dialog class="player" id="player">
+        <button class="player__close" id="playerClose" type="button" aria-label="Close player"><i class="fas fa-times"></i></button>
+        <iframe id="playerFrame" title="Movie player" allowfullscreen></iframe>
+    </dialog>
 
-<script src="./src/js/movie.js"></script>
+    <main class="rows">
+    <section class="row" id="searchResults" hidden>
+        <h2 class="row__title">Search Results</h2>
+        <p class="row__message" hidden>No matches found.</p>
+        <div class="row__viewport">
+            <button class="row__arrow row__arrow--left" type="button" aria-label="Scroll left" hidden><i class="fas fa-chevron-left"></i></button>
+            <div class="row__items"></div>
+            <button class="row__arrow row__arrow--right" type="button" aria-label="Scroll right" hidden><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+    </main>
 
+    <footer class="footer">
+        <span class="logo">CFLIX</span>
+        <p>Movie data and images from TMDB and OMDb.</p>
+    </footer>
+
+    <script src="./src/js/common.js"></script>
+    <script src="./src/js/movie.js"></script>
 </body>
 
 </html>
