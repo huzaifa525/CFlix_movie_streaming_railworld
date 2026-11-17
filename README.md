@@ -16,7 +16,7 @@ Welcome to CFlix, a dynamic movie streaming website. CFlix is a frontend platfor
 
 - **Hindi First:** Hindi titles lead the home page, the rotating banner and the Movies and Series pages.
 - **Home:** Hover previews with trailers, mood rows, Trending Now, and new releases and series.
-- **Movies and Series:** Browse every title by mood, genre and language, sorted by popularity, date or rating.
+- **Movies and Series:** Browse by mood, genre, language, year, rating, length, series status and streaming service in India, sorted by popularity, date, rating, votes or title.
 - **Search:** Instant results for movies, series and actors. Add a year to narrow the results, such as `Leo 2023`.
 - **Title Pages:** Details, trailers, cast, seasons and episodes, and recommendations.
 - **Cast Pages:** Biography and every film and series for an actor.

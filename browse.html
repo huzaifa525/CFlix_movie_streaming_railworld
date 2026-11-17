@@ -30,8 +30,35 @@
                 <option value="popular">Most Popular</option>
                 <option value="new">Newest</option>
                 <option value="top">Top Rated</option>
+                <option value="votes">Most Voted</option>
+                <option value="az">A to Z</option>
             </select>
+            <select id="yearFilter" aria-label="Release year">
+                <option value="">Any Year</option>
+            </select>
+            <select id="ratingFilter" aria-label="Minimum rating">
+                <option value="">Any Rating</option>
+                <option value="6">6+ Rating</option>
+                <option value="7">7+ Rating</option>
+                <option value="8">8+ Rating</option>
+            </select>
+            <select id="runtimeFilter" aria-label="Length">
+                <option value="">Any Length</option>
+                <option value="short">Under 90 min</option>
+                <option value="medium">90 to 150 min</option>
+                <option value="long">Over 150 min</option>
+            </select>
+            <select id="statusFilter" aria-label="Series status">
+                <option value="">Any Status</option>
+                <option value="0">Still Running</option>
+                <option value="3">Ended</option>
+            </select>
+            <select id="providerFilter" aria-label="Streaming service">
+                <option value="">All Services</option>
+            </select>
+            <button class="filters__clear" id="clearFilters" type="button" hidden><i class="fas fa-times"></i> Clear filters</button>
         </div>
+        <p class="filters__count" id="browseCount"></p>
         <div class="chips" id="moodChips"></div>
         <div class="chips" id="genreChips"></div>
         <div class="grid" id="browseGrid"></div>

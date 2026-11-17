@@ -403,6 +403,30 @@ a {
     cursor: default;
 }
 
+.watch__language {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    background-color: #1f1f1f;
+    font-size: 0.9rem;
+}
+
+.watch__language i {
+    margin-top: 2px;
+    color: var(--red);
+    font-size: 1.2rem;
+}
+
+.watch__language p {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
 .watch__servers {
     display: flex;
     flex-wrap: wrap;
@@ -653,6 +677,30 @@ select {
     color: #fff;
     font: inherit;
     font-size: 0.85rem;
+}
+
+.filters__clear {
+    padding: 7px 12px;
+    border: none;
+    background: none;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.filters__clear:hover {
+    color: #fff;
+}
+
+.filters__count {
+    margin: -4px 0 12px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.filters__count:empty {
+    display: none;
 }
 
 .chips {

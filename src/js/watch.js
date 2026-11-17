@@ -235,6 +235,26 @@ function playTrailer(videos) {
     }
 }
 
+function languageName(code) {
+    try {
+        return new Intl.DisplayNames(['en'], { type: 'language' }).of(code);
+    } catch (err) {
+        return code;
+    }
+}
+
+// The servers play inside their own frame, so the page can't switch audio or
+// subtitles itself. This explains where those controls live.
+function showLanguageHelp(details) {
+    const original = languageName(details.original_language);
+    const text = details.original_language === 'hi'
+        ? `Original audio is ${original}. If a server offers subtitles, use the CC or settings button in the player.`
+        : `Original audio is ${original}. To change audio or subtitles, open the settings or CC button inside the player. If you don't see Hindi there, try another server below, because each server has different tracks.`;
+
+    document.getElementById('watchLanguageText').textContent = text;
+    document.getElementById('watchLanguage').hidden = false;
+}
+
 function setTheater(enabled) {
     layout.classList.toggle('watch__layout--theater', enabled);
     theaterButton.setAttribute('aria-pressed', String(enabled));
@@ -302,6 +322,7 @@ function showDetails(details) {
     if (type === 'tv' && !initSeries()) return;
     if (type === 'movie') initRecommendations(item.recommendations.results);
 
+    showLanguageHelp(details);
     renderServers();
     playCurrent();
 }
