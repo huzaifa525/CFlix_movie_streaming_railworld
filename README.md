@@ -45,6 +45,6 @@ The `mac` folder builds CFlix as a native Mac app that works without the website
 
 1. Install Apple's command line tools if needed: `xcode-select --install`
 2. Build the app: `./mac/build.sh`
-3. Open `mac/build/CFlix.app`, or share `mac/build/CFlix.zip`
+3. Open `mac/build/CFlix.app`, or send `mac/build/CFlix.dmg` to others
 
 The app isn't signed with an Apple Developer ID, so on another Mac it has to be opened the first time by right-clicking it and choosing **Open**.

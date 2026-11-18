@@ -7,7 +7,7 @@ OUT=mac/build
 APP="$OUT/CFlix.app"
 SITE="$APP/Contents/Resources/site"
 
-rm -rf "$APP" "$OUT/CFlix.zip" "$OUT/AppIcon.iconset"
+rm -rf "$APP" "$OUT/CFlix.zip" "$OUT/CFlix.dmg" "$OUT/AppIcon.iconset"
 mkdir -p "$APP/Contents/MacOS" "$SITE/netflix-images"
 
 # One binary that runs on both Apple silicon and Intel Macs
@@ -53,5 +53,14 @@ python3 -I mac/tools/blocklist.py "$APP/Contents/Resources/blocklists" "$SITE" "
 
 codesign --force --sign - "$APP"
 ditto -c -k --keepParent "$APP" "$OUT/CFlix.zip"
+
+# Disk image with the usual drag-to-Applications layout, for sending to others
+STAGE="$OUT/dmg"
+rm -rf "$STAGE" "$OUT/CFlix.dmg"
+mkdir -p "$STAGE"
+cp -R "$APP" "$STAGE/"
+ln -s /Applications "$STAGE/Applications"
+hdiutil create -volname CFlix -srcfolder "$STAGE" -ov -format UDZO "$OUT/CFlix.dmg" >/dev/null
+rm -rf "$STAGE"
 
 echo "Built $APP"
