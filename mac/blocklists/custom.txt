@@ -1,0 +1,17 @@
+! CFlix's own rules, added to EasyList and EasyPrivacy
+
+! Ad networks the video servers load
+||tagivi.com^
+||adplox.com^
+||unfortunatelyejectinflected.com^
+
+! Never block the app itself or the services its pages need
+@@||127.0.0.1^
+@@||themoviedb.org^
+@@||tmdb.org^
+@@||youtube-nocookie.com^
+@@||ytimg.com^
+@@||googlevideo.com^
+@@||fonts.googleapis.com^
+@@||fonts.gstatic.com^
+@@||cdnjs.cloudflare.com^

@@ -144,12 +144,47 @@ function fetchTrailerKey(item) {
     });
 }
 
+// Background trailers stay invisible until YouTube reports they're playing,
+// so a trailer that can't autoplay never covers the artwork with its play button
+const trailerFrames = new Set();
+
+window.addEventListener('message', event => {
+    if (!/^https:\/\/www\.youtube(-nocookie)?\.com$/.test(event.origin)) return;
+
+    let data;
+    try {
+        data = typeof event.data === 'string' ? JSON.parse(event.data) : event.data;
+    } catch (err) {
+        return;
+    }
+
+    const frame = [...trailerFrames].find(entry => entry.contentWindow === event.source);
+    const state = data && data.info && data.info.playerState;
+    if (frame && state !== undefined) frame.classList.toggle('trailer--playing', state === 1);
+});
+
 function createTrailerFrame(key) {
     const frame = document.createElement('iframe');
-    frame.src = `https://www.youtube-nocookie.com/embed/${key}?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&loop=1&playlist=${key}`;
+    const origin = encodeURIComponent(window.location.origin);
+    frame.src = `https://www.youtube-nocookie.com/embed/${key}?autoplay=1&mute=1&controls=0&rel=0&playsinline=1&loop=1&playlist=${key}&enablejsapi=1&origin=${origin}`;
     frame.title = 'Trailer preview';
     frame.allow = 'autoplay; encrypted-media';
     frame.tabIndex = -1;
+    frame.classList.add('trailer');
+
+    // YouTube only sends its player state after the page asks to listen
+    frame.addEventListener('load', () => {
+        frame.contentWindow.postMessage(JSON.stringify({ event: 'listening', id: key }), '*');
+    });
+
+    trailerFrames.add(frame);
+    new MutationObserver((changes, observer) => {
+        if (!frame.isConnected) {
+            trailerFrames.delete(frame);
+            observer.disconnect();
+        }
+    }).observe(document.body, { childList: true, subtree: true });
+
     return frame;
 }
 

@@ -38,3 +38,13 @@ To run CFlix locally, follow these steps:
 1. Clone this repository and open the project directory.
 2. Start a static server: `python3 -m http.server 8000`
 3. Open `http://localhost:8000` in your preferred web browser.
+
+## Mac App
+
+The `mac` folder builds CFlix as a native Mac app that works without the website. It runs the site inside the app, stops ad redirects from taking over the window, and blocks ads and trackers with EasyList and EasyPrivacy, which the build downloads fresh each time (turn this off under View → Block Ads if a server stops playing). Extra rules go in `mac/blocklists/custom.txt`. The servers refuse to play when pop-ups are blocked, so their pop-ups open as separate windows you can close with ⌘W.
+
+1. Install Apple's command line tools if needed: `xcode-select --install`
+2. Build the app: `./mac/build.sh`
+3. Open `mac/build/CFlix.app`, or share `mac/build/CFlix.zip`
+
+The app isn't signed with an Apple Developer ID, so on another Mac it has to be opened the first time by right-clicking it and choosing **Open**.
